@@ -91,6 +91,8 @@ Languages can be selected and / or added in the config.lua.
 
 # Features 🛠️
 
+ - Changeable Banner Font
+
 - Multiple Translations 🌏
 
 - Search Function 🔎
@@ -196,6 +198,27 @@ If you do not want to use the SQL features keep the `oxmysql` region in fxmanife
 Alternatively, you can use the keybind command that comes with FiveM without having to use SQL, by entering the following into F8:
 
 `bind keyboard "Yourbutton" "e youremote"`. To remove the keybind, type `"unbind keyboard "Yourbutton"`.
+
+---------------------------------------------------------------------------------------------------------
+
+# Menu Customization
+
+In the appropiately named `config.lua` file, server owners can set the MenuTitle or simply leave it blank. Ideally, this should be 11 characters or less without any spaces.
+You can also set the font, whether or not you want an outline and the MenuPosition. The available fonts are as followed:
+
+```lua
+    -- 0 : Chalet London
+    -- 1 : House Script
+    -- 2 : Monospace
+    -- 4 : Chalet Comprime Cologne
+    -- 7 : Pricedown
+```
+
+RPEmotes also supports custom banners (known as 'MenuImage') which can be defined by a simple imgur, giphy or discord URL like so:
+
+```lua
+MenuImage = 'https://i.imgur.com/osq2J0h.png',
+```
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -334,6 +357,33 @@ Adult Emotes can be hidden from the menu by setting `AdultEmotesDisabled` to `tr
 This will completely conceal the emotes from the lists *(Emotes, Shared Emotes, etc)* at startup making them unusable. Alternatively, you can also hide animal emotes.
 
 ----------------------------------------------------------------------
+
+# Prop Extractor ↔️
+
+Many people have expressed concerns over anticheat scripts kicking or banning their community members due to the fact RPEmotes uses props and anticheats detecting said props being spawned.
+
+To make server owners' jobs a little easier, we have added a prop extractor command that you can enter into the server console which will automate a file inside the RPEmotes resource folder appropriately named, `prop_list.lua`.
+
+### Command:
+
+`emoteextract`
+
+```lua
+
+Available output formats:
+1 - 'prop_name',
+2 - "prop_name",
+3 - prop_name
+
+Command usage example: emoteextract 1
+```
+
+if you would like to visually see the props that are present in RPEmotes *(minus custom made and provided content)*, you can see them [here](https://forge.plebmasters.de/account?tab=datalists&datalist=1abf505b-23b3-493a-31a2-08dbd7a05cc3&type=Object) thanks to [DurtyFree](https://github.com/DurtyFree) and the Plebmaster's team ☺️.
+
+<img src="screenshots/extractor.png" width="700">
+
+----------------------------------------------------------------------
+
 
 # Screenshots 📸
 
